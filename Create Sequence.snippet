@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+<_locDefinition xmlns="urn:locstudio">
+    <_locDefault _loc="locNone"/>
+    <_locTag _loc="locData">Title</_locTag>
+    <_locTag _loc="locData">Description</_locTag>
+    <_locTag _loc="locData">Author</_locTag>
+    <_locTag _loc="locData">ToolTip</_locTag>
+</_locDefinition>
+	<CodeSnippet Format="1.0.0">
+	<Header>
+	<Title>建立順序物件範本</Title>
+        <Shortcut></Shortcut>
+	<Description>建立詳細的順序物件。</Description>
+	<Author>Microsoft Corporation</Author>
+	<SnippetTypes>
+		<SnippetType>Expansion</SnippetType>
+	</SnippetTypes>
+	</Header>
+	<Snippet>
+		<Declarations>
+			<Literal>
+				<ID>sequenceProcname</ID>
+				<ToolTip>順序的名稱</ToolTip>
+				<Default>Sample_Sequence</Default>
+			</Literal>
+			<Literal>
+				<ID>startValue</ID>
+				<ToolTip>開始值</ToolTip>
+				<Default>0</Default>
+			</Literal>
+			<Literal>
+				<ID>stepValue</ID>
+				<ToolTip>順序間隔</ToolTip>
+				<Default>1</Default>
+			</Literal>
+			<Literal>
+				<ID>MinValue</ID>
+				<ToolTip>順序最小值</ToolTip>
+				<Default>minValue</Default>
+			</Literal>
+			<Literal>
+				<ID>MaxValue</ID>
+				<ToolTip>順序最大值</ToolTip>
+				<Default>maxValue</Default>
+			</Literal>
+			<Literal>
+				<ID>isCycle</ID>
+				<ToolTip>是否循環</ToolTip>
+				<Default>CYCLE</Default>
+			</Literal>
+		</Declarations>
+		<Code Language="SQL">
+			<![CDATA[CREATE SEQUENCE $sequenceProcname$ 
+    START WITH $startValue$
+    INCREMENT BY $stepValue$
+	MINVALUE $MinValue$
+	MAXVALUE $MaxValue$
+	$isCycle$
+
+	NEXT VALUE FOR $sequenceProcname$
+	]]>
+		</Code>
+	</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
